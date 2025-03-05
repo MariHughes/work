@@ -62,7 +62,7 @@ list-style: none;
 .menu-link{
     text-transform: uppercase;
     text-decoration: solid;
-    color: var(--mainColor);
+    color: var(--secondaryColor);
 }
 .menu-link:hover{
     color: var(--accentColor);

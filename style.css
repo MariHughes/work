@@ -1,0 +1,69 @@
+:root {
+    /* Шрифты */
+    --mainFont: 'Open Sans';
+    --secondaryFont: 'Roboto Slab';
+
+    /* Цвета */
+    --secondaryColor: #3d4449;
+    --mainColor: #7f888f;
+    --accentColor: #f56a6a;
+    --navigationBgColor: #f5f6f7;
+    --searchBgColor: #f0f0f0;
+
+}
+
+body {
+    font-family: var(--mainFont);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+h1, .subtitle{font-family: var(--secondaryFont);}
+.block,
+.statistics-element {
+    display: flex;
+    gap: 20px
+}
+
+.side-menu {
+    padding-bottom: 17px;
+    background-color: var(--navigationBgColor);
+}
+
+.search-block {
+    padding: 22px;
+    background-color: var(--searchBgColor);
+}
+.subheader {
+    border-bottom: 5px solid var(--accentColor);
+    padding-bottom: 14px;
+}
+
+.main-part {
+    padding: 73px 73px 0px 73px;
+}
+
+.search-field {
+    width: 100%;
+    height: 40px;
+    padding-left: 14px;
+    padding-right: 40px;
+    color: var(--mainColor)
+}
+.menu-title{
+
+}
+.menu-list{
+list-style: none;
+}
+.menu-item{
+
+}
+.menu-link{
+    text-transform: uppercase;
+    text-decoration: solid;
+    color: var(--mainColor);
+}
+.menu-link:hover{
+    color: var(--accentColor);
+}

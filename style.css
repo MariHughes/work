@@ -9,6 +9,7 @@
     --accentColor: #f56a6a;
     --navigationBgColor: #f5f6f7;
     --searchBgColor: #f0f0f0;
+    --borderColor: #DCDCDC;
 
 }
 
@@ -18,11 +19,42 @@ body {
     margin: 0;
     padding: 0;
 }
-h1, .subtitle{font-family: var(--secondaryFont);}
+h1, h3, h4, .subtitle{font-family: var(--secondaryFont);}
 .block,
 .statistics-element {
     display: flex;
     gap: 20px
+}
+
+.news-block {
+    border-top: 3px solid var(--borderColor);
+    padding-top: 46px;
+    margin-top: 46px;
+}
+
+.card-text {
+font-family: var(--mainFont);
+color: var(--mainColor);
+font-size: 14px;
+border-bottom: 0.5px solid var(--borderColor);
+padding-bottom: 30px;
+padding-top: 5px;
+}
+
+.picture {
+    margin-top: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.news-block .picture {
+    width: 272px;
+    height: 169px;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
 }
 
 .side-menu {
@@ -30,10 +62,6 @@ h1, .subtitle{font-family: var(--secondaryFont);}
     background-color: var(--navigationBgColor);
 }
 
-.search-block {
-    padding: 22px;
-    background-color: var(--searchBgColor);
-}
 .subheader {
     border-bottom: 5px solid var(--accentColor);
     padding-bottom: 14px;
@@ -48,16 +76,83 @@ h1, .subtitle{font-family: var(--secondaryFont);}
     height: 40px;
     padding-left: 14px;
     padding-right: 40px;
-    color: var(--mainColor)
+    color: var(--mainColor);
 }
-.menu-title{
 
+.search-block {
+    padding: 22px;
+    background-color: var(--searchBgColor);
+    /* до него дойдет ::after если задать ему position: absolute */
+    position: relative;
+}
+
+.search-block::after {
+    /* обязательное поле */
+    content: '';
+    /* чтобы можно было задавать размеры */
+    display: block;
+    /* размеры */
+    width: 40px;
+    height: 40px;
+    /* url - это путь к иконке.
+    center - это положение картинки в блоке
+    no-repeat - не дублировать изображение, если оно не занимает все доступное пространство */
+    background: url('./assets/loupe.png') center no-repeat;
+    /* нужно для того, чтобы элемент не сдвигал другие элементы */
+    /* прикрепляется к ближайшему элементу, у которого position: relative; */
+    position: absolute;
+    /* положение элемента относительно ближайшего position: relative */
+    right: 22px;
+    top: 22px;
+    transform: rotateY(180deg);
+}
+
+.subheader {
+    padding: 10px;
+    position: relative;
+    /* Цвет, чтобы видеть границы блока */
+    background-color: darkgoldenrod;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    /* Размещение в линию */
+    display: flex;
+    gap: 15px;
+    
+}
+
+.link a {
+    width: 20px;
+    height: 20px;
+}
+
+.link img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-title, .news-header, .posts-title {
+    border-bottom: 3px solid var(--accentColor);
+    padding-bottom: 8px;
+    display: inline-block;
+    padding-right: 14px;
 }
 .menu-list{
 list-style: none;
+padding-left: 0px;
 }
 .menu-item{
+    font-family: var(--secondaryFont);
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid var(--borderColor);
 
+}
+.menu-item:last-child {
+    border: none;
 }
 .menu-link{
     text-transform: uppercase;
@@ -66,4 +161,12 @@ list-style: none;
 }
 .menu-link:hover{
     color: var(--accentColor);
+}
+.menu-with-news{
+    padding: 22px 22px 17px 22px;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

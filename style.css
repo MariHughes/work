@@ -176,18 +176,43 @@ padding-left: 0px;
     padding: 22px 22px 17px 22px;
 }
 
+.block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 40px;
+    border-bottom: 2px solid var(--borderColor);
+    padding-bottom: 80px;
+}
+
+.subtitle {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: var(--mainColor);
+}
+
+.description {
+    font-size: 15px;
+    color: var(--mainColor);
+}
+
+.header {
+    font-size: 25px;
+}
+
 .posts {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: white;
     gap: 1px;
+    background-color: var(--borderColor);
+    
 }
 
-.posts-block {
-    background-color: var(--borderColor);
-    }
+.post {
+    background-color:white;
+    padding: 40px;
+}
 
-    
+
 /* Для карточек и серого бордера 
 1. сдлеать фон всего блока серым (под цвет рамок)
 2. сделать фон белым для каждой карточки
@@ -198,6 +223,7 @@ padding-left: 0px;
 2. Задаем border (можно цвет указывать)
 3. Задаем скругление
 4. Задаем цвет фона когда наводимся через :hover */
+
 
 .link-button {
     padding: 10px 26px 10px 26px;
@@ -213,6 +239,7 @@ padding-left: 0px;
     font-size: 11px;
     border-radius: 5px;
     background-color: transparent;
+    margin-top: 20px;
 }
 
 .link-button:hover {

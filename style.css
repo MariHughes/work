@@ -36,7 +36,6 @@ h1, h3, h4, .subtitle{font-family: var(--secondaryFont);}
 font-family: var(--mainFont);
 color: var(--mainColor);
 font-size: 14px;
-border-bottom: 0.5px solid var(--borderColor);
 padding-bottom: 30px;
 padding-top: 5px;
 }
@@ -143,6 +142,7 @@ padding-top: 5px;
 list-style: none;
 padding-left: 0px;
 }
+
 .menu-item{
     font-family: var(--secondaryFont);
     font-size: 12px;
@@ -151,9 +151,19 @@ padding-left: 0px;
     border-bottom: 0.5px solid var(--borderColor);
 
 }
+/* :last-child - для последнего элемента */
 .menu-item:last-child {
     border: none;
 }
+
+.news-ccard {
+    Border-bottom: 0.5px solid var(--borderColor);
+}
+
+.news-card:last-child {
+    border: none;
+}
+
 .menu-link{
     text-transform: uppercase;
     text-decoration: solid;
@@ -169,4 +179,42 @@ padding-left: 0px;
 .posts {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: white;
+    gap: 1px;
+}
+
+.posts-block {
+    background-color: var(--borderColor);
+    }
+
+    
+/* Для карточек и серого бордера 
+1. сдлеать фон всего блока серым (под цвет рамок)
+2. сделать фон белым для каждой карточки
+3. задать gap: 1px для блока */
+
+/* Для кнопки:
+1. Задаем padding
+2. Задаем border (можно цвет указывать)
+3. Задаем скругление
+4. Задаем цвет фона когда наводимся через :hover */
+
+.link-button {
+    padding: 10px 26px 10px 26px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--accentColor);
+    color: var(--accentColor);
+    display: inline-block;
+    font-family: var(--secondaryFont);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 11px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.link-button:hover {
+    background-color: #fce3e3;
 }

@@ -19,29 +19,52 @@ body {
     margin: 0;
     padding: 0;
 }
-h1, h3, h4, .subtitle{font-family: var(--secondaryFont);}
+
+h1,
+h2,
+h3,
+h4,
+.subtitle {
+    font-family: var(--secondaryFont);
+}
+
+.h2 {
+    font-size: 30px;
+}
+
 .block,
 .statistics-element {
     display: flex;
     gap: 20px
 }
 
+.statistics {
+    border-bottom: 2px solid var(--borderColor);
+    padding-bottom: 60px;
+    padding-top: 40px;
+}
+
 .news-block {
-    border-top: 3px solid var(--borderColor);
+    border-top: 2px solid var(--borderColor);
     padding-top: 46px;
     margin-top: 46px;
+    border-bottom: 2px solid var(--borderColor);
+    padding-bottom: 50px;
 }
 
 .card-text {
-font-family: var(--mainFont);
-color: var(--mainColor);
-font-size: 14px;
-padding-bottom: 30px;
-padding-top: 5px;
+    font-family: var(--mainFont);
+    color: var(--mainColor);
+    font-size: 13px;
+    padding-bottom: 30px;
+    padding-top: 5px;
+}
+
+.footer .card-text:last-child {
+    padding-bottom: 0px;
 }
 
 .picture {
-    margin-top: 30px;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -117,7 +140,7 @@ padding-top: 5px;
     /* Размещение в линию */
     display: flex;
     gap: 15px;
-    
+
 }
 
 .link a {
@@ -132,18 +155,25 @@ padding-top: 5px;
     height: 100%;
 }
 
-.menu-title, .news-header, .posts-title {
+.menu-title,
+.news-header,
+.posts-title {
     border-bottom: 3px solid var(--accentColor);
     padding-bottom: 8px;
     display: inline-block;
     padding-right: 14px;
 }
-.menu-list{
-list-style: none;
-padding-left: 0px;
+
+.posts-title {
+    padding-top: 40px;
 }
 
-.menu-item{
+.menu-list {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.menu-item {
     font-family: var(--secondaryFont);
     font-size: 12px;
     padding-top: 15px;
@@ -151,6 +181,7 @@ padding-left: 0px;
     border-bottom: 0.5px solid var(--borderColor);
 
 }
+
 /* :last-child - для последнего элемента */
 .menu-item:last-child {
     border: none;
@@ -164,25 +195,29 @@ padding-left: 0px;
     border: none;
 }
 
-.menu-link{
+.menu-link {
     text-transform: uppercase;
     text-decoration: solid;
     color: var(--secondaryColor);
 }
-.menu-link:hover{
+
+.menu-link:hover {
     color: var(--accentColor);
 }
-.menu-with-news{
+
+.menu-with-news {
     padding: 22px 22px 17px 22px;
 }
 
 .block {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 40px;
+    padding-top: 70px;
     border-bottom: 2px solid var(--borderColor);
-    padding-bottom: 80px;
+    padding-bottom: 60px;
+    gap: 40px;
 }
+
 
 .subtitle {
     font-size: 15px;
@@ -193,6 +228,7 @@ padding-left: 0px;
 .description {
     font-size: 15px;
     color: var(--mainColor);
+    line-height: 25px;
 }
 
 .header {
@@ -204,14 +240,42 @@ padding-left: 0px;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
     background-color: var(--borderColor);
-    
 }
+
+.posts-block {
+    padding-top: 30px;
+
+}
+
+/* Блок корректировки, выравнивания по линиям */
 
 .post {
-    background-color:white;
+    background-color: white;
     padding: 40px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
+.post:nth-child(1),
+.post:nth-child(2) {
+    padding-top: 0px;
+}
+
+.post:nth-child(1),
+.post:nth-child(3) {
+    padding-left: 0px;
+}
+
+.post:nth-child(2),
+.post:nth-child(4) {
+    padding-right: 0px;
+}
+
+.post:nth-child(3),
+.post:nth-child(4) {
+    padding-bottom: 0px;
+}
 
 /* Для карточек и серого бордера 
 1. сдлеать фон всего блока серым (под цвет рамок)
@@ -239,9 +303,30 @@ padding-left: 0px;
     font-size: 11px;
     border-radius: 5px;
     background-color: transparent;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .link-button:hover {
     background-color: #fce3e3;
+}
+
+.info-blok {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-footer {
+    width: 20px;
+    height: 20px;
+    padding-top: 5px;
+}
+
+.article {
+    border-bottom: 2px solid var(--borderColor);
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.footer {
+    padding-top: 30px;
 }

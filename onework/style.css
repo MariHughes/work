@@ -1,0 +1,394 @@
+:root {
+    /* Шрифты */
+    --mainFont: 'Open Sans';
+    --secondaryFont: 'Roboto Slab';
+
+    /* Цвета */
+    --secondaryColor: #3d4449;
+    --mainColor: #7f888f;
+    --accentColor: #f56a6a;
+    --navigationBgColor: #f5f6f7;
+    --searchBgColor: #f0f0f0;
+    --borderColor: #DCDCDC;
+    --statisticsImageBlockWidth: 146px;
+    --statisticsImageBorderBlockWidth: 120px;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--mainFont);
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+.subtitle {
+    font-family: var(--secondaryFont);
+}
+
+.h1 {
+    margin-top: -7px;
+}
+
+.h2 {
+    font-size: 30px;
+}
+
+.block {
+    display: flex;
+    gap: 20px
+}
+
+.statistics {
+    border-bottom: 2px solid var(--borderColor);
+    padding-bottom: 60px;
+    padding-top: 40px;
+}
+
+.news-block {
+    border-top: 2px solid var(--borderColor);
+    padding-top: 46px;
+    margin-top: 46px;
+    border-bottom: 2px solid var(--borderColor);
+    padding-bottom: 50px;
+}
+
+.card-text {
+    font-family: var(--mainFont);
+    color: var(--mainColor);
+    font-size: 13px;
+    padding-bottom: 30px;
+    padding-top: 5px;
+}
+
+.footer .card-text:last-child {
+    padding-bottom: 0px;
+}
+
+.picture {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.news-block .picture {
+    width: 272px;
+    height: 169px;
+}
+
+.picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.side-menu {
+    padding-bottom: 17px;
+    background-color: var(--navigationBgColor);
+}
+
+.subheader {
+    border-bottom: 5px solid var(--accentColor);
+    padding-bottom: 14px;
+}
+
+.main-part {
+    padding: 73px 73px 0px 73px;
+}
+
+.search-field {
+    width: 100%;
+    height: 40px;
+    padding-left: 14px;
+    padding-right: 40px;
+    color: var(--mainColor);
+}
+
+.search-block {
+    padding: 22px;
+    background-color: var(--searchBgColor);
+    /* до него дойдет ::after если задать ему position: absolute */
+    position: relative;
+}
+
+.search-block::after {
+    /* обязательное поле */
+    content: '';
+    /* чтобы можно было задавать размеры */
+    display: block;
+    /* размеры */
+    width: 40px;
+    height: 40px;
+    /* url - это путь к иконке.
+    center - это положение картинки в блоке
+    no-repeat - не дублировать изображение, если оно не занимает все доступное пространство */
+    background: url('./assets/loupe.png') center no-repeat;
+    /* нужно для того, чтобы элемент не сдвигал другие элементы */
+    /* прикрепляется к ближайшему элементу, у которого position: relative; */
+    position: absolute;
+    /* положение элемента относительно ближайшего position: relative */
+    right: 22px;
+    top: 22px;
+    transform: rotateY(180deg);
+}
+
+.subheader {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    /* Размещение в линию */
+    display: flex;
+    gap: 15px;
+
+}
+
+.link a {
+    /* Размер блока ссылок */
+    width: 20px;
+    height: 20px;
+}
+
+.link img {
+    /* Размещение во весь блок */
+    width: 100%;
+    height: 100%;
+}
+
+.menu-title,
+.news-header,
+.posts-title {
+    border-bottom: 3px solid var(--accentColor);
+    padding-bottom: 8px;
+    display: inline-block;
+    padding-right: 14px;
+}
+
+.posts-title {
+    padding-top: 40px;
+}
+
+.menu-list {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.menu-item {
+    font-family: var(--secondaryFont);
+    font-size: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid var(--borderColor);
+
+}
+
+.news-card {
+    padding-top: 30px;
+}
+
+.news-card,
+.info-blok {
+    border-bottom: 0.5px solid var(--borderColor);
+}
+
+/* :last-child - для последнего элемента */
+.menu-item:last-child {
+    border: none;
+}
+
+.news-card:last-child {
+    border: none;
+}
+
+.info-blok:last-child {
+    border: none;
+}
+
+.menu-link {
+    text-transform: uppercase;
+    text-decoration: solid;
+    color: var(--secondaryColor);
+}
+
+.menu-link:hover {
+    color: var(--accentColor);
+}
+
+.menu-with-news {
+    padding: 22px 22px 17px 22px;
+}
+
+.block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 70px;
+    border-bottom: 2px solid var(--borderColor);
+    padding-bottom: 60px;
+    gap: 50px;
+}
+
+.statistics-block {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.statistic-element {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 147px auto;
+}
+
+.picture-block {
+    width: var(--statisticsImageBlockWidth);
+    height: var(--statisticsImageBlockWidth);
+    position: relative;
+    padding: 30px;
+}
+
+.picture-block::after {
+    content: "";
+    display: block;
+    width: var(--statisticsImageBorderBlockWidth);
+    height: var(--statisticsImageBorderBlockWidth);
+    border-width: 2px;
+    border-color: var(--borderColor);
+    padding-inline: 20px;
+    padding-block: 20px;
+    border-style: solid;
+    position: absolute;
+    top: calc(var(--statisticsImageBlockWidth) / 2 - var(--statisticsImageBorderBlockWidth) / 2);
+    left: calc(var(--statisticsImageBlockWidth) / 2 - var(--statisticsImageBorderBlockWidth) / 2);
+    transform: rotate(45deg);
+}
+
+.picture-block img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.subtitle {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: var(--mainColor);
+}
+
+.description {
+    font-size: 15px;
+    color: var(--mainColor);
+    line-height: 25px;
+}
+
+.header {
+    font-size: 25px;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background-color: var(--borderColor);
+}
+
+.posts-block {
+    padding-top: 30px;
+
+}
+
+/* Блок корректировки, выравнивания по линиям */
+
+.post {
+    background-color: white;
+    padding: 40px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.post:nth-child(1),
+.post:nth-child(2) {
+    padding-top: 0px;
+}
+
+.post:nth-child(1),
+.post:nth-child(3) {
+    padding-left: 0px;
+}
+
+.post:nth-child(2),
+.post:nth-child(4) {
+    padding-right: 0px;
+}
+
+.post:nth-child(3),
+.post:nth-child(4) {
+    padding-bottom: 0px;
+}
+
+/* Для карточек и серого бордера 
+1. сдлеать фон всего блока серым (под цвет рамок)
+2. сделать фон белым для каждой карточки
+3. задать gap: 1px для блока */
+
+/* Для кнопки:
+1. Задаем padding
+2. Задаем border (можно цвет указывать)
+3. Задаем скругление
+4. Задаем цвет фона когда наводимся через :hover */
+
+
+.link-button {
+    padding: 10px 26px 10px 26px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--accentColor);
+    color: var(--accentColor);
+    display: inline-block;
+    font-family: var(--secondaryFont);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 11px;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-top: 30px;
+}
+
+.link-button:hover {
+    background-color: #fce3e3;
+}
+
+.info-blok {
+    display: flex;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.icon-footer {
+    width: 20px;
+    height: 20px;
+    padding-top: 5px;
+}
+
+.article {
+    border-bottom: 2px solid var(--borderColor);
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.footer {
+    padding-top: 30px;
+}
